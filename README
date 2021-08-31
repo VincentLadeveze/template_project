@@ -1,0 +1,68 @@
+# C++ Template project
+
+## Aim
+The target of this repository is to release a template for modern C++ project based on the following development tools:
+    - Visual Studio Code for UI, automation of command lines through Task (build) and Launch (debug), for easy cross-platform and cross-architecture
+    - CMake as build system
+    - Conan for GTest, GLog retreiving and 
+    - Doxygen for documentation
+    - Artifactory as artifact repository for binaries, libraries, etc.
+
+## Installs
+
+## Tree
+### Before source build
+
+```
+├── doc
+├── feature1
+│   ├── include
+│   ├── src
+│   └── tests
+├── feature2
+│   ├── include
+│   ├── src
+│   └── tests
+├── feature3
+│   ├── include
+│   ├── src
+│   └── tests
+├── include
+├── README
+├── src
+└── tests
+    ├── include
+    └── src
+```
+
+### After source all builds
+
+
+# Useful commands for development
+## Linux
+Change your header files extension from .h to .hpp
+`$ find . -depth -name "*.h" -exec sh -c 'f="{}"; mv -- "$f" "${f%.h}.hpp"' \;`
+
+Using several `cmake` versions from `/usr/local/bin/` update-alternatives directory
+```
+$ sudo su -
+# wget https://github.com/Kitware/CMake/releases/download/v3.21.2/cmake-3.21.2.tar.gz
+# tar -xzvf cmake-3.21.2.tar.gz -C /opt/
+# cd /opt/cmake-3.21.2/
+# ./bootstrap
+# make -j10
+# update-alternatives --install /usr/local/bin/cmake cmake /opt/cmake-3.21.2/bin/cmake 1
+# update-alternatives --install /usr/local/bin/cmake cmake /usr/bin/cmake 2
+# update-alternatives --query cmake
+# update-alternatives --config cmake
+# cmake --version
+# exit
+$ cmake --version
+```
+
+NB:
+    - do not type `make install` command after building cmake, it will scratch all the current versions installed.
+    - /opt/ is the best directory for the operation.
+    - keep the priority order of the example on Debian10.
+    - verify your cmake version is the one configured with `update-alternatives` in root and <user>.
+
