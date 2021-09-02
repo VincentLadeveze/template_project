@@ -1,4 +1,6 @@
 // the configured options and settings for Template
 #define Template_VERSION_MAJOR @MyTemplate_VERSION_MAJOR@
 #define Template_VERSION_MINOR @MyTemplate_VERSION_MINOR@
+#define Template_VERSION_PATCH @MyTemplate_VERSION_PATCH@
+#define Template_VERSION_TWEAK @MyTemplate_VERSION_TWEAK@
 

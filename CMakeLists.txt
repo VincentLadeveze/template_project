@@ -9,14 +9,14 @@ message("Language Version: C++" ${CXX_STANDARD_VERSION})
 
 # set the project name
 set(projectName MyTemplate) 
-project(${projectName} VERSION 1.0)
+project(${projectName} VERSION 1.0.3.12)
 
 # Set variables
 set(sourceDir src)
 set(includeDir include)
-message("Project name is:           " ${projectName})
-message("Include dir name is:       " ${sourceDir})
-message("Source dir name is:        " ${includeDir})
+message("Project name is           :" ${projectName})
+message("Include dir name is       :" ${sourceDir})
+message("Source dir name is        :" ${includeDir})
 
 # Add Feature1 subdirectory
 add_subdirectory(feature1)
@@ -35,12 +35,11 @@ add_executable(${projectName}
 # If no reference, put before headers.
 target_include_directories(${projectName} PUBLIC 
                             "${PROJECT_BINARY_DIR}"
-                            "${PROJECT_BINARY_DIR}/include"
-                            #"${PROJECT_BINARY_DIR}/feature1/${includeDir}"
-                            #"${PROJECT_BINARY_DIR}/feature2/${includeDir}"
-                            #"${PROJECT_BINARY_DIR}/feature3/${includeDir}"
+                            "${PROJECT_BINARY_DIR}/${includeDir}"
+                            "${PROJECT_BINARY_DIR}/feature1/${includeDir}"
+                            "${PROJECT_BINARY_DIR}/feature2/${includeDir}"
+                            "${PROJECT_BINARY_DIR}/feature3/${includeDir}"
                             )
 
 # Headers for version
 configure_file(${includeDir}/TemplateConfig.h.in TemplateConfig.h)
-

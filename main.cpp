@@ -13,7 +13,8 @@ int main(int argc, char* argv[])
 
     // report version
     std::cout << argv[0] << " Version " << Template_VERSION_MAJOR << "."
-              << Template_VERSION_MINOR << std::endl;
+              << Template_VERSION_MINOR << "." << Template_VERSION_PATCH 
+              << "." << Template_VERSION_TWEAK << std::endl;
 
     return 1;
   }
