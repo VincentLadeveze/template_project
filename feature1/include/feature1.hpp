@@ -37,7 +37,8 @@ public:
     feature1a();
     ~feature1a();
 
-}
+    int displayHelloDetector();
+};
 
 
 } /* namespace feature1 */

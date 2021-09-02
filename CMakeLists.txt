@@ -13,33 +13,26 @@ project(MyTemplate VERSION 1.0.3.12)
 # Set variables
 set(sourceDir src)
 set(includeDir include)
-message("Project name 2 ways retreive   :" ${prjName} ", " ${PROJECT_NAME})
-message("Include dir name is            :" ${sourceDir})
-message("Source dir name is             :" ${includeDir})
+message("Project name is                : " ${PROJECT_NAME})
+message("Include dir name is            : " ${sourceDir})
+message("Source dir name is             : " ${includeDir})
 
-# add the executable
+# add binary as executable
 add_executable(${PROJECT_NAME})
+
+# add binary as library ()
 
 # Add subdirectories absolutly after add executable (target_sources() won't build)
 add_subdirectory(src)
 add_subdirectory(feature1)
 add_subdirectory(feature2)
-#add_subdirectory(feature3)
-
-
-#target_sources(${PROJECT_NAME} PRIVATE
-#                ${CMAKE_CURRENT_LIST_DIR}/feature2/feature2.cpp
-#                )
+add_subdirectory(feature3)
 
 
 # Put after 'add_executable' cause target name must be known.
 # If no reference, put before headers.
 target_include_directories(${PROJECT_NAME} PUBLIC 
                             "${PROJECT_BINARY_DIR}"
-                            "${PROJECT_BINARY_DIR}/${includeDir}"
-                            #"${PROJECT_BINARY_DIR}/feature1/${includeDir}"
-                            #"${PROJECT_BINARY_DIR}/feature2/${includeDir}"
-                            #"${PROJECT_BINARY_DIR}/feature3/${includeDir}"
                             )
 
 # Headers for version
