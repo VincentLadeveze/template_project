@@ -1,7 +1,7 @@
-# Add Feature1 source subdirectory
-add_subdirectory(src)
+target_sources(${PROJECT_NAME} PRIVATE
+                ${CMAKE_CURRENT_LIST_DIR}/feature2.cpp
+                )
 
-message("feature2 dir: CMAKE_SOURCE_DIR		=	${CMAKE_SOURCE_DIR}")
-message("feature2 dir: CMAKE_BINARY_DIR		=	${CMAKE_BINARY_DIR}")
-message("feature2 dir: CMAKE_CURRENT_SOURCE_DIR	=	${CMAKE_CURRENT_SOURCE_DIR}")
-message("feature2 dir: CMAKE_CURRENT_BINARY_DIR	=	${CMAKE_CURRENT_BINARY_DIR}")
+target_include_directories(${PROJECT_NAME} PUBLIC 
+                            "${CMAKE_CURRENT_LIST_DIR}/include"
+                            )

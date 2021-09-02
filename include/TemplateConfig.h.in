@@ -1,6 +1,10 @@
 // the configured options and settings for Template
-#define Template_VERSION_MAJOR @MyTemplate_VERSION_MAJOR@
-#define Template_VERSION_MINOR @MyTemplate_VERSION_MINOR@
-#define Template_VERSION_PATCH @MyTemplate_VERSION_PATCH@
-#define Template_VERSION_TWEAK @MyTemplate_VERSION_TWEAK@
+#define Template_VERSION_GENERATION             @MyTemplate_VERSION_MAJOR@
+#define Template_VERSION_REVISION               @MyTemplate_VERSION_MINOR@
+#define Template_VERSION_CORRECTION             @MyTemplate_VERSION_PATCH@
+#define Template_VERSION_RELEASE_CANDIDATE      @MyTemplate_VERSION_TWEAK@
 
+
+// GoCoRo
+// https://archive.framalibre.org/article2448.html
+// Appliquer la notion de révisions paires (stable:corrections=retours utilisateurs) et impaires (dev+tests=bétâ) ?

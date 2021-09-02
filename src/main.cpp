@@ -12,9 +12,9 @@ int main(int argc, char* argv[])
     std::cout << "Usage: " << argv[0] << " number" << std::endl;
 
     // report version
-    std::cout << argv[0] << " Version " << Template_VERSION_MAJOR << "."
-              << Template_VERSION_MINOR << "." << Template_VERSION_PATCH 
-              << "." << Template_VERSION_TWEAK << std::endl;
+    std::cout << argv[0] << " Version " << Template_VERSION_GENERATION << "."
+              << Template_VERSION_REVISION << "." << Template_VERSION_CORRECTION
+              << "-rc" << Template_VERSION_RELEASE_CANDIDATE << std::endl;
 
     return 1;
   }

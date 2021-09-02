@@ -64,5 +64,5 @@ NB:
     - do not type `make install` command after building cmake, it will scratch all the current versions installed.
     - /opt/ is the best directory for the operation.
     - keep the priority order of the example on Debian10.
-    - verify your cmake version is the one configured with `update-alternatives` in root and <user>.
+    - verify your cmake version in root and <user> to be sure that it is excatly the one you configured with `update-alternatives`.
 
