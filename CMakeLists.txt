@@ -1,14 +1,22 @@
-cmake_minimum_required(VERSION 3.10)
+cmake_minimum_required(VERSION 3.14)
 
-# specify the C++ standard
+# specify the C++ and C standards
 set(CXX_STANDARD_VERSION 17)            # C++17
+set(C_STANDARD_VERSION 17)              # C17
 
 set(CMAKE_CXX_STANDARD ${CXX_STANDARD_VERSION})
 set(CMAKE_CXX_STANDARD_REQUIRED True)
+set(CMAKE_C_STANDARD ${C_STANDARD_VERSION})
+set(CMAKE_C_STANDARD_REQUIRED True)
+
 message("Language Version: C++" ${CXX_STANDARD_VERSION})
 
 # set the project name
-project(MyTemplate VERSION 1.0.3.12)
+project(MyTemplate 
+            VERSION         1.0.3.12
+            DESCRIPTION     "Describe briefly your project"
+            LANGUAGES       CXX   # C_EXTENSIONS
+            )
 
 # Set variables
 set(sourceDir src)

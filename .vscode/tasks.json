@@ -1,0 +1,53 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Configure Template project",
+            "type": "shell",
+            "command": "mkdir ${workspaceRoot}/build",
+            "detail": "Create build/ directory ${workspaceRoot} !",
+            "problemMatcher": []
+        },
+        {
+            "label": "Clean Template project",
+            "type": "shell",
+            "command": "rm -rf ${workspaceRoot}/build",
+            "detail": "Template Release details !",
+            "problemMatcher": []
+        },
+        {
+            "label": "Template Build Debug",
+            "type": "shell",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Debug && cmake --build . ",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Template Debug details !"
+        },
+        {
+            "label": "Template Build Release",
+            "type": "shell",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Release && cmake --build . ",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Template Release details !"
+        }
+    ]
+}
