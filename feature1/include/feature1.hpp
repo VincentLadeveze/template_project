@@ -15,13 +15,13 @@
 #include <vector>
 
 
-namespace feature1 {
+// namespace feature1 {
 
 
 /*
  *  E N U M S
  */
-enum feat1 {
+enum feat1Enum {
     foo         = 1,
     bar         = 2,
     foobar      = 3,
@@ -41,6 +41,6 @@ public:
 };
 
 
-} /* namespace feature1 */
+// } /* namespace feature1 */
 
 #endif /* __FEATURE1_HPP__  */
