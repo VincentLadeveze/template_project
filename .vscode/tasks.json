@@ -18,9 +18,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Template Build Debug",
+            "label": "Template Executable - Build Debug",
             "type": "shell",
-            "command": "cmake .. -DCMAKE_BUILD_TYPE=Debug && cmake --build . ",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Debug -DBUILD_EXEC=ON && cmake --build . -j 10",
             "options": {
                 "cwd": "${workspaceRoot}/build"
             },
@@ -31,12 +31,12 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Template Debug details !"
+            "detail": "Template Executable Debug details !"
         },
         {
-            "label": "Template Build Release",
+            "label": "Template Executable - Build Release",
             "type": "shell",
-            "command": "cmake .. -DCMAKE_BUILD_TYPE=Release && cmake --build . ",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_EXEC=ON && cmake --build . --parallel 10",
             "options": {
                 "cwd": "${workspaceRoot}/build"
             },
@@ -47,7 +47,39 @@
                 "kind": "build",
                 "isDefault": true
             },
-            "detail": "Template Release details !"
+            "detail": "Template Executable Release details !"
+        },
+        {
+            "label": "Template Library - Build Debug",
+            "type": "shell",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Debug -DBUILD_EXEC=OFF -DBUILD_LIB=ON && cmake --build . -j 10",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Template Library Debug details !"
+        },
+        {
+            "label": "Template Library - Build Release",
+            "type": "shell",
+            "command": "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_EXEC=OFF -DBUILD_LIB=ON && cmake --build . --parallel 10",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Template Library Release details !"
         }
     ]
 }

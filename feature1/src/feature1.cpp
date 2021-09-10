@@ -1,13 +1,19 @@
-#include <iostream>
+/*
+ * GPL v3
+ *
+ * feature1.cpp - <4 words of definition for the feature. Ex: Camera object interface>
+ *
+ * @author:  Vincent Ladeveze
+ * @date:    2021
+ *
+ */#include<cstdio>
+
 #include "feature1.hpp"
 
-// using namespace feature1;
 
-// int feature1a::displayHelloDetector() {
-int feature1a::displayHelloDetector() {
-    std::cout << "Hello ME detector" << std::endl;
+int Feature1a::displayHelloDetector() {
 
-    std::cout << "Only if you launched the executable and you are Guilaume Gey, just say => \"Encule Thérèse !!!\"" << std::endl;
+    std::cout << "Only if you launched the executable and you are Guilaume G. just say => \"Encule Thérèse !!!\"" << std::endl;
 
     return 0;
 }

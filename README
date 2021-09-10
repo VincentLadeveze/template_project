@@ -13,12 +13,12 @@ The target of this repository is to release a template for modern C++ project ba
 
 ## Installs
 
-## Tree
+## Directory ree
 ### Before source build
 
 ```
 ├── doc
-├── feature1
+├── feature2
 │   ├── include
 │   ├── src
 │   └── tests

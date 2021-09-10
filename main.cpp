@@ -1,13 +1,18 @@
-// A simple program that computes the square root of a number
 #include <cmath>
 /* #include <cstdlib>   */      // Removed because of C++11
 #include <iostream>
 #include <string>
 
 #include "TemplateConfig.h"
+#include "common.hpp"
+
 
 int main(int argc, char* argv[])
 {
+  Library mylib;
+
+  mylib.useMe();
+
   if (argc < 2) {
     std::cout << "Usage: " << argv[0] << " number" << std::endl;
 
@@ -27,6 +32,7 @@ int main(int argc, char* argv[])
   const double outputValue = sqrt(inputValue);
   std::cout << "The square root of " << inputValue << " is " << outputValue
             << std::endl;
+
   return 0;
 }
 

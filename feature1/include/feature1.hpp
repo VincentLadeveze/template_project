@@ -1,10 +1,10 @@
 /*
- * Copyright (C) 2021, Detection Technology Plc.
+ * GPL v3
  *
  * feature1.hpp - <4 words of definition for the feature. Ex: Camera object interface>
  *
- * @author:
- * @date:
+ * @author:  Vincent Ladeveze
+ * @date:    2021
  *
  */
 #ifndef __FEATURE1_HPP__
@@ -13,9 +13,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-
-
-// namespace feature1 {
 
 
 /*
@@ -31,16 +28,17 @@ enum feat1Enum {
 /*
  *  feature1a class definition
  */
-class feature1a {
+class Feature1a {
 
 public:
-    feature1a();
-    ~feature1a();
+    Feature1a(){
+            std::cout << "Feature1a class, " << "Hello ME detector" << std::endl;
+    };
+
+    ~Feature1a(){};
 
     int displayHelloDetector();
 };
 
-
-// } /* namespace feature1 */
 
 #endif /* __FEATURE1_HPP__  */

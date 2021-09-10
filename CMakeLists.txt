@@ -25,10 +25,22 @@ message("Project name is                : " ${PROJECT_NAME})
 message("Include dir name is            : " ${sourceDir})
 message("Source dir name is             : " ${includeDir})
 
-# add binary as executable
-add_executable(${PROJECT_NAME})
 
-# add binary as library ()
+# Build Executable or Library
+option(BUILD_EXEC "Use tutorial provided math implementation" ON)
+option(BUILD_LIB "Use tutorial provided math implementation" OFF)
+if(BUILD_EXEC)
+    # add binary as executable
+    add_executable(${PROJECT_NAME})
+    target_sources(${PROJECT_NAME} PRIVATE
+                ${CMAKE_CURRENT_LIST_DIR}/main.cpp
+                )
+elseif(BUILD_LIB)
+    # add binary as library ()
+    option(BUILD_SHARED_LIBS "Build using shared libraries" ON)     # Add -DBUILD_SHARED_LIBS=OFF in cmake command line (vs code tasks) to build a static library.
+    add_library(${PROJECT_NAME})
+endif()
+
 
 # Add subdirectories absolutly after add executable (target_sources() won't build)
 add_subdirectory(src)
@@ -41,6 +53,7 @@ add_subdirectory(feature3)
 # If no reference, put before headers.
 target_include_directories(${PROJECT_NAME} PUBLIC 
                             "${PROJECT_BINARY_DIR}"
+                            "${CMAKE_CURRENT_LIST_DIR}/${includeDir}"
                             )
 
 # Headers for version
