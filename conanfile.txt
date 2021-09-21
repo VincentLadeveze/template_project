@@ -1,0 +1,13 @@
+[requires]
+#boost/1.72.0
+#poco/1.9.4
+gtest/1.11.0
+glog/0.5.0
+
+[generators]
+
+[options]
+#boost:shared=False
+#poco:shared=False
+googletest:shared=False
+googlelog:shared=False

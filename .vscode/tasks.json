@@ -6,16 +6,35 @@
         {
             "label": "Configure Template project",
             "type": "shell",
-            "command": "mkdir ${workspaceRoot}/build",
+            "linux":{
+                "command": "mkdir -p ${workspaceRoot}/build", // && cd ${workspaceRoot}/build", 
+            },
+            "windows":{
+                "command": "cmd",
+                "args": ["/C","if not exist .\\build mkdir .\\build"]       // To be tested
+            },
+            "osx":{
+                "command": "mkdir -p ${workspaceRoot}/build",
+            },
+            "problemMatcher": [],
             "detail": "Create build/ directory ${workspaceRoot} !",
-            "problemMatcher": []
         },
         {
             "label": "Clean Template project",
             "type": "shell",
-            "command": "rm -rf ${workspaceRoot}/build",
+            "linux":{
+                "command": "rm -rf ${workspaceRoot}/build",
+            },
+            "windows":{
+                "command": "cmd",
+                "args": ["/C", "if exist .\\build rmdir .\\build" ],    // To be tested
+            },
+            "osx":{
+                "command": "rm -rf ${workspaceRoot}/build",
+            },
             "detail": "Template Release details !",
-            "problemMatcher": []
+            "problemMatcher": [],
+            ""
         },
         {
             "label": "Template Executable - Build Debug",
@@ -80,6 +99,22 @@
                 "isDefault": true
             },
             "detail": "Template Library Release details !"
+        },
+        {
+            "label": "Test Template Library",
+            "type": "shell",
+            "command": "conan install .. && cmake .. -DCMAKE_BUILD_TYPE=Debug -DBUILD_EXEC=OFF -DBUILD_LIB=ON -DENABLE_TESTS=ON && cmake --build . -j 10",
+            "options": {
+                "cwd": "${workspaceRoot}/build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Test Library Google Test framework !"
         }
     ]
 }
